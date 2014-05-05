@@ -2,6 +2,7 @@
 from __future__ import division
 import math
 from numpy import *
+
 def get_doc():
     doc = [ ['he','is','my', 'good','friend'],
             ['she','is','my', 'best','friend'],
