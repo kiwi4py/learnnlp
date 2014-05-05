@@ -2,6 +2,7 @@
 from __future__ import division
 import math
 from numpy import *
+
 def get_doc():
     doc = [ ['he','is','my', 'good','friend'],
             ['she','is','my', 'best','friend'],
@@ -18,7 +19,7 @@ def get_vocablist(doc):
         vocab = vocab | set(i)
     return list(vocab)
 
-def setOfWords2Vec(vocablist, inputSet):
+def get_vectorized_doc(vocablist, inputSet):
     returnVec = [0] * len(vocablist)
     for word in inputSet:
         if word in vocablist:
@@ -49,7 +50,7 @@ def get_idf(key, returnVec, n, doc):
 def get_weighteddoc(eachdoc, vocablist):
     weighteddoc = [0] * len(vocablist)
     for key in vocablist:
-        returnVec = setOfWords2Vec(vocablist, eachdoc)
+        returnVec = get_vectorized_doc(vocablist, eachdoc)
         tf = get_df(key, returnVec)
         n = get_n(key, eachdoc)
         idf = get_idf(key, returnVec, n, eachdoc)
