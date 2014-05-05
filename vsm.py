@@ -66,7 +66,7 @@ def vsm(doc1, doc2):
         diancheng = diancheng + weighteddoc1[i] * weighteddoc2[i]
     return diancheng
 
-def get_the_most(doc):
+def get_the_most_similar(doc):
     doc1 = doc[0]
     resultlist = []
     for i in range(1, len(doc)):
@@ -78,5 +78,5 @@ def get_the_most(doc):
 
 doc = get_doc()
 vocablist = get_vocablist(doc)
-result = get_the_most(doc)
+result = get_the_most_similar(doc)
 print result
